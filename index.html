@@ -139,6 +139,45 @@
             font-size: 1rem;
             text-transform: uppercase;
         }
+
+        /* Responsive Countdown Styles */
+        .countdown-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+            color: #1e3a8a;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1rem; /* Adjust font size for mobile */
+            white-space: nowrap;
+        }
+        .countdown-number {
+            font-size: 2.5rem; /* Larger numbers */
+            font-family: 'Dancing Script', cursive;
+        }
+        .countdown-text {
+            font-size: 0.75rem; /* Smaller text */
+            text-transform: uppercase;
+        }
+
+        /* Adjustments for smaller screens */
+        @media (max-width: 480px) {
+            .countdown-item {
+                font-size: 0.8rem;
+            }
+            .countdown-number {
+                font-size: 2rem;
+            }
+            .date-number {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-blue-100 flex items-center justify-center p-4">
@@ -175,25 +214,22 @@
         <!-- Countdown Timer -->
         <div class="mb-8">
             <h4 class="text-lg font-semibold text-blue-800 mb-2 animate-fadeIn" style="font-family: 'Dancing Script', cursive;">Cuenta regresiva:</h4>
-            <div class="flex justify-center items-center space-x-4 text-blue-900 font-bold text-2xl animate-fadeIn">
-                <div class="flex flex-col items-center">
-                    <span id="days">00</span>
-                    <span class="text-sm font-normal">DÍAS</span>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-text">DÍAS</span>
                 </div>
-                <span>:</span>
-                <div class="flex flex-col items-center">
-                    <span id="hours">00</span>
-                    <span class="text-sm font-normal">HORAS</span>
+                <div class="countdown-item">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-text">HORAS</span>
                 </div>
-                <span>:</span>
-                <div class="flex flex-col items-center">
-                    <span id="minutes">00</span>
-                    <span class="text-sm font-normal">MINUTOS</span>
+                <div class="countdown-item">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-text">MINUTOS</span>
                 </div>
-                <span>:</span>
-                <div class="flex flex-col items-center">
-                    <span id="seconds">00</span>
-                    <span class="text-sm font-normal">SEGUNDOS</span>
+                <div class="countdown-item">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-text">SEGUNDOS</span>
                 </div>
             </div>
         </div>
