@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Baby Shower - Benjamín Castro Ardila</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/sDLMccgx/239e3c6e-4aae-47cc-bdd3-900df4e0cb6c.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+        
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0f2fe; /* Light blue background as fallback */
+            /* New repeating background pattern */
+            background-image: url('https://i.postimg.cc/CMWmd93L/Sin-t-tulo-720-x-720-px-1.gif');
+            background-repeat: repeat;
+            background-size: 150px; /* Adjust size of the repeating image */
+            display: block; /* Allows natural document flow and scrolling */
+            min-height: 100vh;
+            padding: 2rem;
+            color: #1e3a8a; /* Dark blue text */
+            position: relative;
+        }
+
+        .invitation-card {
+            background-color: rgba(255, 255, 255, 0.5);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            padding: 2.5rem 1.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto; /* Centers the card horizontally */
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out;
+            z-index: 10;
+        }
+        .header-text {
+            font-family: 'Dancing Script', cursive;
+            animation: popIn 0.8s ease-out;
+        }
+        
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #93c5fd; /* Light blue */
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out 0.5s both;
+            text-decoration: none; /* Remove underline from link */
+        }
+        .button:hover {
+            background-color: #60a5fa; /* Blue hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .icon {
+            margin-right: 0.5rem;
+        }
+        .banner {
+            width: 100%;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+            margin-top: -2.5rem;
+            margin-left: -1.5rem;
+            margin-right: -1.5rem;
+            margin-bottom: 2rem;
+            max-height: 250px;
+            object-fit: contain;
+            animation: fadeIn 1s ease-out;
+            display: block; /* Ensures centering */
+            margin-left: auto; /* Centers the image */
+            margin-right: auto; /* Centers the image */
+        }
+        .audio-overlay {
+            position: fixed; /* Use fixed to keep it on top of the screen */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+            animation: fadeIn 1s ease-in;
+        }
+        .date-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Dancing Script', cursive;
+            color: #1e3a8a;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .date-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .date-line {
+            width: 100%;
+            height: 2px;
+            background-color: #1e3a8a;
+        }
+        .date-number {
+            font-size: 2.5rem;
+            font-family: 'Dancing Script', cursive;
+        }
+        .date-text {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="bg-blue-100 flex items-center justify-center p-4">
+    
+    <div id="audio-overlay" class="audio-overlay">
+        <p class="text-xl font-bold mb-4">Pulsa para iniciar</p>
+        <button id="play-button" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.972l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="invitation-card z-10">
+        <!-- Banner Image -->
+        <img src="https://i.postimg.cc/MGZP0VZs/Sin-t-tulo-720-x-720-px.gif" alt="Baby Shower Banner" class="banner">
+
+        <!-- Texto debajo del banner -->
+        <p class="text-center text-lg text-blue-800 mb-6 font-semibold">
+            Pronto un nuevo latido se unirá al compás de nuestro hogar, y con él, la certeza de que el amor es infinito. Nuestro milagro, Benjamín, llega para envolvernos en ternura y recordarnos que el corazón de unos padres crece con la llegada de su primer gran tesoro.
+        </p>
+
+        <!-- Audio Player -->
+        <audio id="background-audio" loop class="w-full hidden">
+            <source src="https://audio.jukehost.co.uk/t2kl7owkfbY03ZRpthFjgDNoEaK2FfwC.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <h1 class="text-4xl header-text font-bold text-blue-900 mb-2">Jonathan y Camila</h1>
+        <p class="text-xl font-semibold text-blue-800 mb-4 animate-fadeIn" style="font-family: 'Dancing Script', cursive;">¡Te invitan al</p>
+        <h2 class="text-5xl header-text font-bold text-blue-900 mb-2">Baby Shower</h2>
+        <h3 class="text-4xl header-text font-bold text-blue-900 mb-6">de Benjamín</h3>
+
+        <!-- Countdown Timer -->
+        <div class="mb-8">
+            <h4 class="text-lg font-semibold text-blue-800 mb-2 animate-fadeIn" style="font-family: 'Dancing Script', cursive;">Cuenta regresiva:</h4>
+            <div class="flex justify-center items-center space-x-4 text-blue-900 font-bold text-2xl animate-fadeIn">
+                <div class="flex flex-col items-center">
+                    <span id="days">00</span>
+                    <span class="text-sm font-normal">DÍAS</span>
+                </div>
+                <span>:</span>
+                <div class="flex flex-col items-center">
+                    <span id="hours">00</span>
+                    <span class="text-sm font-normal">HORAS</span>
+                </div>
+                <span>:</span>
+                <div class="flex flex-col items-center">
+                    <span id="minutes">00</span>
+                    <span class="text-sm font-normal">MINUTOS</span>
+                </div>
+                <span>:</span>
+                <div class="flex flex-col items-center">
+                    <span id="seconds">00</span>
+                    <span class="text-sm font-normal">SEGUNDOS</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Details -->
+        <div class="text-center mb-8 animate-fadeIn">
+            <p class="text-lg text-blue-800 mb-4" style="font-family: 'Dancing Script', cursive;">
+                Estamos muy felices de compartir este momento tan importante con ustedes.
+            </p>
+            <!-- New Date and Time Layout -->
+            <div class="date-container">
+                <div class="date-item">
+                    <div class="date-line w-full"></div>
+                    <span class="date-text">NOVIEMBRE</span>
+                </div>
+                <div class="date-item">
+                    <span class="date-number">02</span>
+                </div>
+                <div class="date-item">
+                    <div class="date-line w-full"></div>
+                    <span class="date-text">3:30 P.M.</span>
+                </div>
+            </div>
+            
+            <p class="text-lg font-semibold text-blue-800" style="font-family: 'Dancing Script', cursive;">
+                Lugar: Finca La Unión, Lote 1
+            </p>
+        </div>
+
+        <!-- Interactive Buttons -->
+        <div class="space-y-4">
+            <a href="https://maps.google.com/maps?q=4.4912901%2C-75.7090166&z=17&hl=es" target="_blank" class="button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 3.75-5.25 7.5-7.5 7.5S4.5 14.25 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+                VER UBICACIÓN
+            </a>
+
+            <a href="https://wa.me/573136709964?text=Hola,%20confirmo%20mi%20asistencia%20al%20baby%20shower%20de%20Benjamín." target="_blank" class="button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                CONFIRMA TU ASISTENCIA
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Set the countdown date
+        const countDownDate = new Date("Nov 2, 2025 15:30:00").getTime();
+
+        function updateCountdown() {
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result
+            document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+            document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+
+            // If the countdown is finished, write some text
+            if (distance < 0) {
+                clearInterval(this); // Stop the interval
+                const countdownElement = document.querySelector('.countdown');
+                if (countdownElement) {
+                    countdownElement.innerHTML = "¡EL EVENTO HA COMENZADO!";
+                }
+            }
+        }
+        
+        // Update the countdown every 1 second
+        setInterval(updateCountdown, 1000);
+
+        // Audio autoplay workaround
+        const playButton = document.getElementById('play-button');
+        const audioOverlay = document.getElementById('audio-overlay');
+        const audio = document.getElementById('background-audio');
+
+        playButton.addEventListener('click', () => {
+            audio.play().then(() => {
+                audioOverlay.style.display = 'none';
+            }).catch(error => {
+                // Autoplay was prevented. Show a message or handle the error gracefully.
+                console.error("Autoplay was prevented:", error);
+                audioOverlay.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
